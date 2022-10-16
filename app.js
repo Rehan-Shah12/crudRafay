@@ -1,7 +1,10 @@
 var express = require("express");
 var mongoose = require("mongoose");
 
+const http = require("http").createServer(app);
+
 var app = express();
+app.use(express.json());
 
 const port = 3000;
 
@@ -14,7 +17,7 @@ app.get("/", (req, res) => {
 });
 
 mongoose
-  .connect("mongodb://localhost:27017/newcruds", {
+  .connect("mongodb+srv://rehan:123@cluster1.gaeyhad.mongodb.net/test", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
