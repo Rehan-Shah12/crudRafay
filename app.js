@@ -9,8 +9,10 @@ app.use(express.json());
 const port = 3000;
 
 var productRouter = require("./routes/productRoutes");
+var userRouter = require("./routes/userRoutes");
 
 app.use("/product", productRouter);
+app.use("/user", userRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello Rehan");
